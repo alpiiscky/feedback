@@ -11,7 +11,10 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "~2.0.0"
+        "yiisoft/yii2": "~2.0.0",
+        "himiklab/yii2-recaptcha-widget": "*",
+        "himiklab/yii2-sortable-grid-view-widget" : "*",
+        "devgroup/yii2-jsoneditor": "*"
     },
     "autoload": {
         "psr-4": {
