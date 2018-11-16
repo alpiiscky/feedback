@@ -1,31 +1,75 @@
-Расширение обратной связи с гугл капчей
+Модуль обратной связи с динамическими полями
 =======================================
-Конструктор для формы обратной связи
+Форма обратной связи с возможностью добавления динамичных полей и встроенной гугл капчей
 
 Installation
 ------------
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
-
-Either run
+Для установки выполните
 
 ```
 php composer.phar require --prefer-dist alpiiscky/yii2-feedback "*"
 ```
 
-or add
+или
+
+```
+composer require --prefer-dist alpiiscky/yii2-feedback "*"
+```
+
+или добавьте
 
 ```
 "alpiiscky/yii2-feedback": "*"
 ```
 
-to the require section of your `composer.json` file.
+в `composer.json`.
 
-
-Usage
+Настройка
 -----
 
-Once the extension is installed, simply use it in your code by  :
+Модуль имеет следующие зависимости:
 
 ```php
-<?= \alpiiscky\feedback\AutoloadExample::widget(); ?>```
+    "yiisoft/yii2": "~2.0.0",
+    "himiklab/yii2-recaptcha-widget": "*",
+    "himiklab/yii2-sortable-grid-view-widget" : "*",
+    "devgroup/yii2-jsoneditor": "*",
+    "webvimark/module-user-management": "^1.0"
+```
+и следовательно, 
+
+1. необходимо настроить yii2 согласно инструкциям:
+
+```php
+https://github.com/himiklab/yii2-recaptcha-widget
+https://github.com/webvimark/user-management
+```
+и выполнить миграцию для user-management
+
+2. настроить swiftmailer
+
+3. в params.php указать
+```php
+<?php
+
+return [
+    'adminEmail' => '', // куда отправить
+    'noticeEmail' => '', // smtp-адрес
+    'noticeTheme' => 'Обратная связь', // тема
+];
+```
+
+
+
+Использование
+-----
+
+Динмаические поля можно настроить по url, предварительно авторизовавшись админом:
+```php
+/feedback/rules
+```
+
+```php
+<?= \alpiiscky\feedback\widgets\FeedbackWidget::widget([])?>
+```

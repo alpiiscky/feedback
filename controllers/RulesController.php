@@ -45,6 +45,15 @@ class RulesController extends Controller
         ];
     }
 
+    public function init()
+    {
+        parent::init();
+
+        if (!Yii::$app->user->isSuperadmin) {
+            throw new NotFoundHttpException("Page not found");
+        }
+    }
+
     /**
      * Lists all FeedbackRules models.
      * @return mixed
