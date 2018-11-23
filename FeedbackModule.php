@@ -21,10 +21,12 @@ class FeedbackModule extends \yii\base\Module
     {
         parent::init();
 
+        Yii::setAlias('@alpiiscky', '@vendor/alpiiscky/feedback');
+
         Yii::$app->i18n->translations['feedback'] = [
             'class'          => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath'       => '@alpiiscky/feedback/messages',
+            'basePath'       => '@alpiiscky/yii2-feedback/messages',
             'fileMap'        => [
                 'feedback' => 'feedback.php',
             ]
