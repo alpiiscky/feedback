@@ -55,17 +55,28 @@ https://github.com/webvimark/user-management
 
 return [
     'adminEmail' => '', // куда отправить
-    'noticeEmail' => '', // smtp-адрес
+    'noticeEmail' => '', // от кого
     'noticeTheme' => 'Обратная связь', // тема
 ];
 ```
 
+4. Выполнить мирацию 
+```
+php yii migrate --migrationPath=vendor/alpiiscky/yii2-feedback/migrations/
+```
 
+5. Добавить модуль
+```php
+'feedback' => [
+            'class' => 'alpiiscky\feedback\FeedbackModule',
+            'layout' => '@app/views/layouts/main',
+        ],
+```
 
 Использование
 -----
 
-Динмаические поля можно настроить по url, предварительно авторизовавшись админом:
+Динамические поля можно настроить по url, предварительно авторизовавшись админом (webvimark/user-management):
 ```php
 /feedback/rules
 ```

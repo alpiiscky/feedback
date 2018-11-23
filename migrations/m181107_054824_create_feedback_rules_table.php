@@ -25,7 +25,7 @@ class m181107_054824_create_feedback_rules_table extends Migration
             ['Строковое поле', 'textInput', '[{"rule":"string","params":{"max":50}},{"rule":"required"}]'],
             ['Email', 'textInput', '[{"rule":"email"},{"rule":"required"}]'],
             ['Многострочное поле', 'text', '[{"rule":"string"},{"rule":"required"}]'],
-            ['Google captcha', 'captcha', '[{"rule":"himiklab\\yii2\\recaptcha\\ReCaptchaValidator","params":{"secret":"your secret key","uncheckedMessage":"Please confirm that you are not a bot"}}]'],
+            ['Google captcha', 'googleCaptcha', '[{"rule":"\\himiklab\\yii2\\recaptcha\\ReCaptchaValidator","params":{"secret":"your secret key","uncheckedMessage":"Please confirm that you are not a bot"}}]'],
         ]);
     }
 
