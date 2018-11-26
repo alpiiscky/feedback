@@ -84,3 +84,22 @@ php yii migrate --migrationPath=vendor/alpiiscky/yii2-feedback/migrations/
 ```php
 <?= \alpiiscky\feedback\widgets\FeedbackWidget::widget([])?>
 ```
+
+Например, настройка для текстового поля:
+ ```php
+[
+  {
+    "rule": "string",
+    "params": {
+      "max": 50,
+      "message": "'Please choose a username.'"
+    }
+  },
+  {
+    "rule": "required",
+    "params": {
+      "message": "Please choose a username."
+    }
+  }
+]
+```

@@ -22,7 +22,7 @@ class m181107_054824_create_feedback_rules_table extends Migration
         ]);
 
         $this->batchInsert('feedback_rules', ['title', 'inputType', 'inputRules'], [
-            ['Строковое поле', 'textInput', '[{"rule":"string","params":{"max":50}},{"rule":"required"}]'],
+            ['Строковое поле', 'textInput', '[{"rule":"string","params":{"max":50}},{"rule":"required", "params":{"message":"Please choose a field.""}}]'],
             ['Email', 'textInput', '[{"rule":"email"},{"rule":"required"}]'],
             ['Многострочное поле', 'text', '[{"rule":"string"},{"rule":"required"}]'],
             ['Google captcha', 'googleCaptcha', '[{"rule":"\\himiklab\\yii2\\recaptcha\\ReCaptchaValidator","params":{"secret":"your secret key","uncheckedMessage":"Please confirm that you are not a bot"}}]'],
